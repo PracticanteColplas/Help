@@ -1,0 +1,18 @@
+<div class="app-resume-corrida">
+    <div class="resumen-fondo">
+        <div>
+            <h3 class="resumen-title">RESUMEN CORRIDA</h3>
+        </div>
+    </div>
+    
+    <app-resumen-corrida-mostrar 
+        [materialSalidaActualizar]=this._materialService.MaterialSalidaActualizar 
+        [reprocesoExtrusionActualizar]=this._reprocesoService.ReprocesoActualizar 
+        [tiempoEjecucionActualizar]=this._corridaService.ActualizarDuracionCorrida
+    
+        (cambioEditarMaterialSalida)='materialSalidaEditarMostrar($event)' 
+        (cambioVerMaterialSalida)='materialSalidaVerMostrar($event)'>
+    </app-resumen-corrida-mostrar>
+    
+</div>
+

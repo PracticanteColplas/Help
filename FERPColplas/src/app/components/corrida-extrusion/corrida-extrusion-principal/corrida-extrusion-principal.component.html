@@ -1,0 +1,28 @@
+<!-- <body onkeydown="return (event.keyCode == 154)"></body> -->
+
+<app-corrida-extrusion-inicio *ngIf='iniciarNuevaCorrida' (cambio)='cerrarExtrusionInicio($event)' [CorridaNoFinalizada]=this._corridaService.CorridaNoFinalizadaActivar [ActualizarCorridaExtrusionInicio]=this._corridaService.IngresarNuevaCorrida  (activarFinalizarCorrida)='activarFinalizarCorrida($event)' (maquina)='enviarMaquina($event)' [OperarioCorridaExtrusionInicio]=this._corridaService.OperarioCorridaExtrusionInicio></app-corrida-extrusion-inicio>
+
+<app-materia-prima-principal></app-materia-prima-principal>
+
+<app-corrida-extrusion-final *ngIf='finalizarCorrida' [CorridaExtrusionFinalActualizar]=this._corridaService.CorridaExtrusionFinal  (cambio)='cerrarExtrusionFinal($event)' [CorridaExtrusionFinalDesactivar]=this._corridaService.CorridaExtrusionFinalDesactivar></app-corrida-extrusion-final>
+
+<app-informacion-general-inicio [ActualizarInformacion]=this._corridaService.InformacionActualizar></app-informacion-general-inicio>
+
+<app-material-salida-principal></app-material-salida-principal>
+
+<div class="corrita-extrusion-div-reproceso-devolucion">
+    <app-reproceso-principal></app-reproceso-principal> 
+    <app-devolucion-principal></app-devolucion-principal>
+</div>
+
+<div class="corrita-extrusion-div-retal-torta-resumen-liquidacion">
+    <app-retal-principal></app-retal-principal>
+    <app-torta-principal></app-torta-principal>
+    <app-resumen-corrida-principal></app-resumen-corrida-principal>
+    <app-liquidacion-materiales-principal></app-liquidacion-materiales-principal>
+</div>
+
+
+<app-tiempo-paro-principal></app-tiempo-paro-principal>
+
+<app-observaciones-principal></app-observaciones-principal>

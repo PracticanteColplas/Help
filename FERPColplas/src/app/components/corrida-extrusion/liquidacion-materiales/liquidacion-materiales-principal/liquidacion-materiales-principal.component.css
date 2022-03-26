@@ -1,0 +1,23 @@
+.liquidacion-material-title{
+    margin-top: 20px;
+    border: #bcb0b0 solid 2px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.app-liquidacion-material{
+    width: 100%;
+    margin-bottom: 6%;
+}
+
+.liquidacion-materiales-fondo{
+    background: #d2d2d2;
+    text-align: center;
+    
+}
+
+svg {
+    width: 20px;    
+    height: 20px;
+    color: white;
+}

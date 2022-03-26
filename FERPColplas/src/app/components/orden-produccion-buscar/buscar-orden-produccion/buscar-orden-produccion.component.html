@@ -1,0 +1,76 @@
+<div class="cortina" id="material-salida-cortina">
+    
+</div>
+
+<div>
+    <div class="div-buscar-orden-produccion">
+        <div>
+            <img class="logocolplas" src="assets/image/Logo1.png" alt="">
+        </div>
+        <div>
+            <h1 class="title-buscar-orden-produccion">Consulta de ordenes de produccion</h1>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="grid">
+    <div class="g-col-6 g-col-md-4 container">
+
+        <div id="container">
+            <div id="row">
+                <div id="col">
+                    <div id="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." [value]="inputValue"  (input)="onInput($event)" >
+                    </div>
+                </div>
+            </div>
+            <div class="div-table-row-buscar-orden-produccion" id="row">
+                <div id="col">
+                    <i (click)="descargarHistoricoRollos()" class="i-material-saldia editar">
+                        
+                        <img src="https://img.icons8.com/material/24/000000/ms-excel--v1.png"/>
+                    </i>
+                    <table class="table" id="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Orden Produccion</th>
+                                <th>Codigo Producto</th>
+                                <th>Descripcion</th>
+                                <th>Acciones</th>
+                            </tr> 
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let orden of this.ordenesProduccion | paginate: { itemsPerPage: pageSize, currentPage: p }" >
+                                <td>{{ orden.pk_OrdenProduccion }}</td>
+                                <td>{{ orden.codigoProductoERP }}</td>
+                                <td>{{ orden.descripcion }}</td>
+                                <td>
+                                    <i (click)="verOrdenProduccion(orden.pk_OrdenProduccion)" class="i-material-saldia ver">
+                                        <i class="bi bi-bar-chart-fill"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                            <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+                                        </svg>
+                                        
+                                    </i>
+                                    <i (click)="descargarOrdenProduccion(orden.pk_OrdenProduccion)" class="i-material-saldia editar">
+                                        <img src="https://img.icons8.com/material/24/000000/ms-excel--v1.png"/>
+                                    </i>
+                                </td>
+                            </tr>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                  <li class="page-item"><a class="page-link" (click)="paginaAnterior()">Previous</a></li>
+                                  <li class="page-item"><a class="page-link" (click)="paginaSiguiente()">Next</a></li>
+                                </ul>
+                            </nav>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <app-orden-produccion-ver *ngIf='iniciarVerMaterialSalida' [ordenProduccionBuscar]=this._buscarOrdenProduccionService.OrdenProduccionID (cambio)='materialSalidaVerMostrar_($event)'></app-orden-produccion-ver>
+        </div>
+    </div>
+</div>

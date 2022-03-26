@@ -1,0 +1,72 @@
+<div class="cortina" id="material-salida-cortina">
+    
+</div>
+
+<div >
+
+    <div class="container-body" *ngFor="let item of corridas">
+        <div class="container-fluid text-center">    
+          <div class="row content">
+            <div class="col-sm-1 ">
+              <app-menu [ActualizarMenu]=this._corridaService.ActualizarMenu [OperarioActulizarFinalizar]=this._corridaService.CorridaNoFinalizadaActivar (maquina)='establecerMaquina($event)' [OrdenProduccion]=this._ordenProduccionService.DatosOrdenProduccion ></app-menu>
+            </div>
+            <div class="col-sm-11">
+                <table>
+                    <tr>
+                        <td colspan="3" >
+                            <img class="table-logo" src="assets/image/Logo1.png" alt="">
+                            <h1 class="table-header-title">Registro producción {{ this.corridaTipoEscrito }}</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>   
+                            <h3 class="table-header-option">Orden Produccion: 
+                            <span class="table-header-option-result">{{ listOrdenProduccion.pk_OrdenProduccion }}</span> 
+                            </h3> 
+                        </td>
+                        <td> 
+                            <h3 class="table-header-option">Codigo Producto: 
+                            <span class="table-header-option-result">{{ listOrdenProduccion.codigoProductoERP }}</span> 
+                            </h3> 
+                        </td>
+                        <td>
+                            <h3 class="table-header-option">Descripcion: 
+                                <span class="table-header-option-result">{{ listOrdenProduccion.descripcion }}</span> 
+                            </h3> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <h3 class="table-header-option">Cliente:    
+                                <span class="table-header-option-result">{{ listOrdenProduccion.cliente }}</span> 
+                            </h3> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3 class="table-header-option">Maquina: 
+                                <span class="table-header-option-result">{{ this.maquina }}</span>
+                            </h3> 
+                        </td>
+                        <td colspan="2">
+                            <h3 class="table-header-option">Cantidad Programada: 
+                                <span class="table-header-option-result">{{ listOrdenProduccion.cantidadProgramada }}</span> 
+                            </h3> 
+                        </td>
+                    </tr>
+                    <tr *ngIf="this.corridaTipo == 1">
+                        <td colspan="3">
+                            <div class="orden-produccion-contenedor">
+                                <div>
+                                    <app-corrida-extrusion-principal (maquina)='establecerMaquina($event)' [OperarioActulizarInicio]=this._operarioService.OperarioActulizarInicio [OperarioActulizarFinalizar]=this._operarioService.OperarioActulizarFinalizar></app-corrida-extrusion-principal>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+</div>

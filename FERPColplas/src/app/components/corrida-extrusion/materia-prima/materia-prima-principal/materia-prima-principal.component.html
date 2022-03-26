@@ -1,0 +1,17 @@
+
+<div class="app-materia-prima-principal">
+
+ <div>
+    <h1 class="title-SalidaProducto">Salida de Producto - Corrida</h1>
+</div>
+
+<app-materia-prima-ingresar *ngIf='iniciarNuevoConsumoMPriExtrusion' [MPExtrusionPermiso]=this._corridaService.AceptarMPri (cambio)='cerrarExtrusionConsumoMPriIngresar($event)'></app-materia-prima-ingresar>
+
+<app-materia-prima-mostrar *ngIf='mostrarConsumoMPriExtrusion' [nuevo]=this._consumoMPriExtrusionService.ConsumoMPriActualizar  [ConsumoMPriActualizar]=this._consumoMPriExtrusionService.ConsumoMPriActualizar (cambio)='cerrarExtrusionMostrarConsumoMPriIngresar($event)' (cambioEditarMPriCorridaExtrusion)='MPriCorridaExtrusionEditar($event)' (cambioEliminarMPriExtrusion)='MPriExtrusionVer($event)'></app-materia-prima-mostrar>
+
+<app-materia-prima-editar *ngIf='iniciarEditarMPriExtrusion' [MPriExtrusionActualizar]=this._consumoMPriExtrusionService.MPriExtrusion (cambio)='MPriSalidaEditar_($event)'></app-materia-prima-editar>
+
+<app-materia-prima-eliminar [MPriExtrusionEliminar]=this._consumoMPriExtrusionService.MPriEliminar (cambio)='MPriSalidaVer_($event)'></app-materia-prima-eliminar>
+
+
+</div>

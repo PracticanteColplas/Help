@@ -1,0 +1,36 @@
+<div class="app-torta">
+    <div class="torta-fondo">
+        <div>
+            <h3 class="torta-title">TORTA</h3>
+        </div>
+    </div>
+    
+    
+    <div class="torta-iniciarTorta" (click)="IniciarNuevaTortaExtrusion()">
+        <div class="torta-iniciarTorta-contenido">
+            <table>
+                <tr>
+                    <td>
+                        <i >
+                            Nueva Torta
+                            <i class="bi bi-plus"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                        </i>
+                    </td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    
+    
+    <app-torta-ingresar *ngIf='iniciarNuevaTortaExtrusion' [TortaExtrusionPermiso]=this._corridaService.AceptarTorta (cambio)='cerrarExtrusionTortaingresar($event)'></app-torta-ingresar>
+    
+    <app-torta-mostrar [tortaExtrusionActualizar]=this._tortaService.TortaExtrusionActualizar (cambioEditarTortaCorridaExtrusion)='tortaCorridaExtrusionMostrar($event)' (cambioEliminarTortaExtrusion)='tortaExtrusionEliminarMostrar($event)' ></app-torta-mostrar>
+    
+    <app-torta-editar *ngIf='iniciarEditarTortaExtrusion' [tortaExtrusionActualizar]=this._tortaService.TortaCorridaExtrusion (cambio)='TortaExtrusionEditarMostrar_($event)' ></app-torta-editar>
+    
+    <app-torta-eliminar [tortaExtrusionEliminar]=this._tortaService.TortaExtrusionEliminar (cambio)='TortaExtrusionEliminarMostrar_($event)' ></app-torta-eliminar>
+</div>
+

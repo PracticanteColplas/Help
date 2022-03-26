@@ -1,0 +1,40 @@
+.tiempo-paro-table {
+    background: #e8e8e8;
+}
+
+.table {
+    border: 1px white;
+    border-top: 1px #e8e8e8;
+}
+
+.tiempo-paro-table-th{
+    border: #b6aaaa solid 2px;
+    border-top: 0px;
+}
+
+.tiempo-paro-table-td{
+    background: white;
+}
+
+.tiempo-paro-table-th-causa{
+    width: 48%;
+}
+
+.tiempo-paro-table-tr{
+    border-top: 1px;
+    border-top: white;
+}
+
+
+
+.i-tiempo-paro{
+    margin-inline: 7px;
+}
+
+.ver{
+    color: #404040;
+}
+
+.editar{
+    color: #196fbc;
+}

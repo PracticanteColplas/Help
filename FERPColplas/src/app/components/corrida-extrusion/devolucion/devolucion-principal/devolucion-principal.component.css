@@ -1,0 +1,62 @@
+.devolucion-title{
+    margin-top: 20px;
+    border: #bcb0b0 solid 2px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.app-devolucion{
+    width: 100%;
+    margin-bottom: 6%;
+}
+
+.devolucion-fondo{
+    background: #d2d2d2;
+    text-align: center;
+}
+
+.devolucion-iniciarDevolucion{
+    float: right;
+    margin-top: -30px;
+}
+
+.devolucion-iniciarDevolucion-contenido{
+    background: #13a8bc;
+    padding-block: 3px;
+    padding-inline-start: 20px;
+    border-end-start-radius: 20px;
+    border-start-start-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    padding-right: 5px;
+    color: #c5eaee;
+}
+
+svg {
+    width: 20px;    
+    height: 20px;
+    color: white;
+}
+
+.modal-body{
+    color: black;
+}
+
+.modal-title{
+    color: black;
+}
+
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    outline: 0;
+    cursor: default;
+}

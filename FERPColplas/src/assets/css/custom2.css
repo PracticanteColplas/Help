@@ -1,0 +1,53 @@
+
+p{
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 7px;
+
+}
+#qr-code{
+    float: left;
+    margin-left: -6px;
+    margin-top: -8px;
+
+    transform: scale(0.9);
+
+}
+
+
+.Ifo{
+    border: solid black 1px;
+    border-radius: 2px;
+    overflow: hidden;
+
+    transform: scale(1.1);
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+
+    width: 378px;
+    height: 227px;
+
+    margin-left: 23px;
+    margin-top: 18px;
+
+}
+h3{
+    margin: 0;
+    font-size: 12px;
+    margin-left: 7px;
+    font-weight: 900;
+}
+
+.primer-div-material-salida-ver{
+    float: left;
+    margin-top: 4px;
+    margin-left: 23px;
+}
+
+.segundo-div-material-salida-ver{
+    width: 46%;
+    margin-top: -50px;
+    float: left;
+    height: 400px;
+}
+

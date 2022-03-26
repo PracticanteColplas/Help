@@ -1,0 +1,50 @@
+<div class="app-devolucion">
+    <div class="devolucion-fondo">
+        <div>
+            <div>
+                <h3 class="devolucion-title">DEVOLUCIONES</h3>
+            </div>
+        </div>
+        
+        <div class="devolucion-iniciarDevolucion">
+            <div class="devolucion-iniciarDevolucion-contenido">
+                <table>
+                    <tr>
+                        <td>
+                            <i data-bs-toggle="modal" href="#editarModalToggle" role="button"  class="i-retal editar">
+                                <div class="modal fade" id="editarModalToggle" aria-hidden="true" aria-labelledby="editarModalToggleLabel" tabindex="-1">
+                                  <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="editarModalToggleLabel">Atencion</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        Esta seguro que desea ingresar una nueva devolucion, recuerde que se ingresa en la ultima corrida.
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button class="btn btn-primary"  (click)="IniciarNuevaDevolucionExtrusion()">Editar de todas formas</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                Nueva Devolucion
+                                <i class="bi bi-plus"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                            </i>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+        </div>
+    </div>
+    
+    <app-devolucion-ingresar *ngIf='iniciarNuevaDevolucionExtrusion' [DevolucionPermiso]=this._corridaService.AceptarTorta  (cambio)='cerrarExtrusionDevolucionIngresar($event)' [devolucionIngresarPermiso]=this._corridaService.AceptarDevolucion></app-devolucion-ingresar>
+    
+    <app-devolucion-mostrar [DevolucionTotal]=this._devolucionService.DevolucionActualizar (cambioEditarDevolucion)='devolucionEditarMostrar($event)'></app-devolucion-mostrar>
+    
+</div>
+

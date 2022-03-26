@@ -1,0 +1,49 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="guardarRetal()" *ngIf="form">    
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h3 class="title-observaciones">REGISTRO RETAL Y DESPERDICIOS EXTRUSIÓN</h3>
+            </div>
+            <div>
+                <p>Selecione y especifique la cantidad de Retal</p>
+            </div>
+            <div class="div-container">
+                <div class="retal-contenedor-div">
+                    <div *ngFor="let retal of ListaRetalesColumnas | keyvalue" class="retal-contenedor-div-div">
+                        <table class="table table-bordered reproceso-table" >
+                            <thead>
+                                <tr class="reproceso-table-tr">
+                                  <th></th>
+                                  <th>cantidad</th>
+                                </tr> 
+                            </thead>
+                            <tr *ngFor="let item of retal.value">
+                                <td class="retal-td">
+                                    <div class="div-container">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox"  (change)="onChange(item.pk_RetalExtrusion, $event )" id="{{ item.pk_RetalExtrusion }}">
+                                            <label class="form-check-label"  for="{{ item.pk_RetalExtrusion }}">
+                                                {{ item.descripcion }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="{{ item.pk_RetalExtrusion }}" (change)="onChangeValor( item.pk_RetalExtrusion )" formControlName="{{ item.pk_RetalExtrusion }}" [attr.disabled]="false" min="0" pattern="^[0-9.]+">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="div-container">
+                <div class="div-buttons-extrusion-inicio">
+                    <div class="retal-buttons-center">
+                        <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || this.activarBoton || !AceptarRetal"  type="submit">Aceptar</button>                
+                        <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarRetalIngresar()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\BackUp\publish\rpcolplas</_PublishTargetUrl>
+    <History>True|2022-02-28T20:55:37.7767350Z;True|2022-02-28T15:48:01.5510345-05:00;False|2022-02-28T15:44:43.6868955-05:00;True|2022-02-28T15:42:30.7679597-05:00;True|2022-02-28T11:34:27.1860057-05:00;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAu5GPhuuwqkK0eZ/0w472UAAAAAACAAAAAAAQZgAAAAEAACAAAAAom2p3qX0IXpTXX8KGLEboROtTAxbO8POaNC7q5gyt7wAAAAAOgAAAAAIAACAAAADGiCm6BFQqharVBuk9v0c6o1giyqzvkuaD043uJkG/riAAAAC3eOWt9YO6f5cmTGySjPNAWY8vG7N/tqeujM01A4c1T0AAAAB4IHcomon/tWaxkxHK6PhU9OxoMk1LU5UvvXF7VPpMIEm6Mcb3Vp353NwoPLajjkaObEbcagy/Rskdc2AN4O5d</EncryptedPassword>
+  </PropertyGroup>
+</Project>

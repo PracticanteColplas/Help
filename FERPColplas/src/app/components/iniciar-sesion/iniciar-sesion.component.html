@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="verificarUsuario()" >    
+    <div class="grid">
+        <div class="g-col-6 g-col-md-4 container">
+            <!-- <img class="logocolplas" src="../../../assets/image/Logo1.png" alt=""> -->
+            <img class="logocolplas" src="assets/image/Logo1.png" alt="">
+            <h1 class="tittle">Iniciar Sesion</h1>
+
+            <div class="iniciar-sesion-component-div">
+                <div class="inputSelectRol">
+                    <select class="form-select" formControlName="rol" id="exampleFormControlSelect1">
+                        <option [value]="rol.pk_Rol" *ngFor="let rol of this.listRol">
+                            {{ rol.descripcion }}
+                        </option>
+                      </select>
+                </div>
+                <div class="input-group mb-3 inputOrder">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
+                    <input type="password" class="form-control" id="contrasena" formControlName="contrasena" placeholder="Digite la contraseña">
+                </div>
+                <div class="button_registro d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" [disabled]="this.form.invalid" class="btn btn-primary">Continuar</button>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</form>

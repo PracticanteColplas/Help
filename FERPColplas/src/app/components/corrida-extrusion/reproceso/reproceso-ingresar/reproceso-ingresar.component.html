@@ -1,0 +1,44 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="guardarReproceso()">    
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h3 >Nuevo Rollo Reproceso</h3>
+            </div>
+            <div>
+                <h3>Peso Neto del Rollo de Reproceso</h3>
+            </div>
+            <p>Digite Peso Neto del Rollo de Reproceso</p>
+            <div class="div-container">
+                <div>
+                    <input type="number" id="pesoNetoRollo" class="form-control" formControlName="pesoNetoRollo" maxlength="" min="0" pattern="^[0-9.]+">
+                </div>
+            </div>
+            <div class="div-container">
+                <div>
+                    <div class="div-container">
+                        <label for="UbicacionTipo">Ubicacion: </label>
+                    </div>
+                    <div>
+                        <select #t (change)="capturar(t.value)" formControlName="ubicacionNumeroLetra" class="form-select form-select-sm">
+                            <option [value]="reprocesoUbicacionNumeroLetra.valor" *ngFor="let reprocesoUbicacionNumeroLetra of ReprocesoUbicacionNumeroLetra">
+                                {{ reprocesoUbicacionNumeroLetra.nombre }}
+                            </option>
+                        </select>
+                        <select aria-label="Default select example" formControlName="ubicacionNumeroNumero" id="UbicacionNumeroLetra" name="UbicacionNumeroLetra" class="form-select form-select-sm">
+                            <option [value]="reprocesoUbicacionNumeroNumero" *ngFor="let reprocesoUbicacionNumeroNumero of ReprocesoUbicacionNumeroNumero" >{{ reprocesoUbicacionNumeroNumero }}</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="div-container">
+                <div class="div-buttons-extrusion-inicio ">
+                    <td md-dialog-actions>
+                        <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !ReprocesoPermiso"  type="submit">Aceptar</button>                
+                        <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarReprocesoIngresar()">Cancelar</button>
+                    </td>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

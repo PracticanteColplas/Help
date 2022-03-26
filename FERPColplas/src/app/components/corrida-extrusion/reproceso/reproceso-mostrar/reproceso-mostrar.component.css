@@ -1,0 +1,38 @@
+.reproceso-table {
+    background: #e8e8e8;
+    border-top: 0px;
+    width: 48%;
+    margin-inline: 7px;
+}
+
+.reproceso-table-tr-data{
+    background: white;
+}
+
+.i-reproceso{
+    margin-inline: 7px;
+}
+
+.ver{
+    color: #404040;
+}
+
+.editar{
+    color: #196fbc;
+}
+
+.reproceso-table-contenedor{
+    margin: 14px;
+    display: flex;
+    margin-top: 0px;
+}
+
+.reproceso-table{
+    width: 48%;
+    margin-inline: 7px;
+}
+
+.reproceso-table-tr{
+    border-top: white;
+    background: #e8e8e8;
+}

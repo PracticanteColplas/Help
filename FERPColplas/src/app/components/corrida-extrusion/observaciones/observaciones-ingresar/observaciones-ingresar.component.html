@@ -1,0 +1,18 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="guardarNota()">    
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h2 class="title-observaciones">Digite Nueva Nota</h2>
+            </div>
+            <div class="div-container">
+                <textarea class="form-control" id="Descripcion" formControlName="Descripcion" rows="3"></textarea>
+            </div>
+            <div class="div-container">
+                <div class="div-buttons-extrusion-inicio ">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !observacionPermiso"  type="submit">Aceptar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarNotaIngresar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+              <tr class="liquidacion-materiales-table">
+                <th>Material Consumido</th>
+                <th>Cantidad Consumida</th>
+                <th>Cantidad Devuelta</th>
+                <th>Desviacion</th>
+                <th>Sobrante o faltante</th>
+              </tr> 
+            </thead>
+            <tr *ngFor="let key of this.MPriCantidadDevilucion" class="liquidacion-materiales-tr-amarillo">
+              <td>{{ key[0] }}</td>
+              <td>{{ key[1] }}</td>
+              <td>{{ key[2] }}</td>
+            </tr>
+            <tr>
+              <td class="liquidacion-materiales-tr-td-rojo">Total</td>
+              <td class="liquidacion-materiales-tr-td-rojo">{{ this.materiaConsumidoTotal }}</td>
+              <td class="liquidacion-materiales-tr-td-gris">{{ this.DevolucionTotal }}</td>
+              <td class="liquidacion-materiales-tr-td-gris">{{ this.Desviacion }}%</td>
+              <td class="liquidacion-materiales-tr-td-gris">{{ this.SobranteFaltante }}</td>
+            </tr>
+          </table>
+    </div>
+</div>

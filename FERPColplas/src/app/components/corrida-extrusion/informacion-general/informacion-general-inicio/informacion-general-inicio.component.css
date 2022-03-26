@@ -1,0 +1,44 @@
+.app-informacion-general{
+    width: 80%;
+    margin-left: 20px;
+    float: left;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 0px;
+}
+
+
+.table{
+    text-align: center;
+}
+
+.title-InformacionGeneral{
+    margin-top: 20px;
+    border: #bcb0b0 solid 2px;
+    margin-bottom: 0px;
+    background: #d2d2d2;
+    font-weight: bold;
+}
+
+.informacion-general-table {
+    background: #e8e8e8;
+    border-top: 0px;
+    border-bottom: white;
+}
+
+.informacion-general-table-td{
+    background: white;
+    border-bottom: white;
+}
+
+.table>:not(:first-child) {
+    border-top: 0px;
+}
+
+.informacion-table-tbody-td{
+    border: white;
+}
+
+.color-amarillo{
+    background: #ffd600;
+}

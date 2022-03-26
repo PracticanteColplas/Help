@@ -1,0 +1,53 @@
+<div class="relative">
+    <div id="IfoCorrida">
+        <div class="Ifo" id="Ifo">
+            <div id="qr-code">
+                <qr-code *ngIf="this.materialSalidaVer" [value]="qrdata" [size]="145"></qr-code>
+            </div>
+            <div class="Ifo-2">
+                <div class="primer-div-material-salida-ver">
+                    <div>
+                        <h3>CODIGO ERP</h3>
+                        <P>{{ InformacionMaterialSalidaVer[0] }}</P>
+                    </div>
+                    <div>
+                        <h3>ORDEN DE PRODUCCION</h3>
+                        <p>{{ InformacionMaterialSalidaVer[1] }}</p>
+                    </div>
+                    <div>
+                        <h3>CLIENTE</h3>
+                        <p>{{ InformacionMaterialSalidaVer[2] }}</p>
+                    </div>
+                    <div>
+                        <h3>OPERARIO</h3>
+                        <p>{{ InformacionMaterialSalidaVer[3] }}</p>
+                    </div>
+                    <div>
+                        <h3>CONSECUTIVOS</h3>
+                        <p>{{ InformacionMaterialSalidaVer[4] }}</p>
+                    </div>
+                    <div>
+                        <h3>CANTIDAD</h3>
+                        <p>{{ InformacionMaterialSalidaVer[5] }}</p>
+                    </div>
+                </div>
+                <div class="segundo-div-material-salida-ver">
+                    <div>
+                        <h3>REFERENCIA</h3>
+                        <p>{{ InformacionMaterialSalidaVer[6] }} </p>
+                    </div>
+                    <div>
+                        <h3>UBICACION</h3>
+                        <p>{{ InformacionMaterialSalidaVer[7] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="material-salida-buttons-center">
+        <div class="div-buttons-extrusion-inicio">
+            <button styleSheetFile="assets/css/custom1.css" printSectionId="IfoCorrida" ngxPrint class="btn btn-primary btn-sm" type="submit">Imprimir</button>  
+            <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarMaterialSalidaVer()">Cancelar</button>
+        </div>
+    </div>
+</div>

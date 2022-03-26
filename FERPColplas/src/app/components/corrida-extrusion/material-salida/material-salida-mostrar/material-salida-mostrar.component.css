@@ -1,0 +1,33 @@
+.table-materialSalida{
+    float: left;
+    margin-top: 30px;
+    margin-inline: -61px;
+    margin-left: 111px;
+}
+
+.i-material-saldia{
+    margin-inline: 7px;
+}
+
+.ver{
+    color: #404040;
+}
+
+.editar{
+    color: #196fbc;
+}
+
+.material-salida-table-contenedor{
+    margin: 20px;
+    display: flex;
+    margin-top: 0px;
+}
+
+.material-salida-table{
+    width: 28%;
+    margin-inline: 15px;
+}
+
+.material-salida-table-tr{
+    background: #e8e8e8;
+}

@@ -1,0 +1,58 @@
+
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="guardarConsumoMPri()" *ngIf="form">    
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h3>REGISTRO DEVOLUCION MATERIA PRIMA - EXTRUSIÓN</h3>
+            </div>
+            <div>
+                <h3>Registro - Devolucion Materia Prima</h3>
+            </div>
+            <div class="div-container">
+                <div id="row">
+                    <div id="col">
+                        <div id="form-group" class="form-group-buscador-materia-prima">
+                            <input type="text" class="form-control" placeholder="Search..." [value]="inputValue"  (input)="onInput($event)" >
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>cantidad</th>
+                                </tr> 
+                            </thead>
+                            <tr *ngFor="let item of this.MPri | paginate: { itemsPerPage: pageSize, currentPage: p }">
+                                <td class="td-devolucion-materia-prima-pk">
+                                    <p>{{ item.pk_CodigoProducto }}</p>
+                                </td>
+                                <td class="td-devolucion-materia-prima-descripcion">
+                                    <p>{{ item.descripcion }}</p>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="{{ item.pk_CodigoProducto }}" formControlName="{{ item.pk_CodigoProducto }}" min="0" pattern="^[0-9.]+">
+                                </td>
+                            </tr>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                  <li class="page-item"><a class="page-link" (click)="paginaAnterior()">Previous</a></li>
+                                  <li class="page-item"><a class="page-link" (click)="paginaSiguiente()">Next</a></li>
+                                </ul>
+                              </nav>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="div-container">
+                <div class="div-buttons-extrusion-inicio ">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !devolucionIngresarPermiso"  type="submit">Aceptar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarMPriIngresar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

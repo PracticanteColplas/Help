@@ -1,0 +1,162 @@
+<div class="relative" style="visibility: hidden;">
+    <div id="excel-table">
+        <div class="app-informacion-general">
+            <div class="div-contenedor-InformacionGeneral">
+              <h3 class="title-InformacionGeneral">INFORMACION GENERAL DE LA CORRIDA</h3>
+            </div>
+            <div>
+                <div>
+                    <table class="informacion-corridas table-bordered" id="informacion-corridas table-bordered">
+                      <thead>
+                        <tr class="informacion-general-table">
+                          <th class="informacion-general-table-th">OPERARIO INICIO</th>
+                          <th class="informacion-general-table-th">FECHA/HORA DE INICIO</th>
+                          <th class="informacion-general-table-th">OPERARIO FINAL</th>
+                          <th class="informacion-general-table-th">FECHA/HORA DE FINAL</th>
+          
+                          <th class="informacion-general-table-th">TIEMPO DE AJUSTE</th>
+                          <th class="informacion-general-table-th">TIEMPO DE PARO</th>
+                          <th class="informacion-general-table-th" [attr.colspan]="mayor" >CANTIDAD</th>
+                          <th class="informacion-general-table-th">TOTAL PRODUCIDO</th>
+                          <th class="informacion-general-table-th">TIEMPO EJECUCION</th>
+                          
+                          <th class="informacion-general-table-th">KILOS/HORA</th>
+                          <th class="informacion-general-table-th" [attr.colspan]="mayorRetal">DESPERDICIO</th>
+                          <th class="informacion-general-table-th">TOTAL DESPERDICIO</th>
+                          <th class="informacion-general-table-th" [attr.colspan]="mayorObservacion">OBSERVACIONES</th>
+                        </tr> 
+                      </thead>
+                      
+                      <tr class="informacion-table-tbody-tr" *ngFor="let item of this.corridasOrdenProduccion">
+                        <td class="informacion-table-tbody-td">{{ item[3][0] }}</td>
+                        <td class="informacion-table-tbody-td">{{ item[2][0] }}</td>
+                        <td class="informacion-table-tbody-td">{{ item[3][1] }}</td>
+                        <td class="informacion-table-tbody-td">{{ item[2][1] }}</td>
+        
+                        <td class="informacion-table-tbody-td">{{ item[0] }}</td>
+                        <td class="informacion-table-tbody-td">{{ item[5][0] }}</td>
+
+                        <td class="{{ item[4][2][indice] }}" *ngFor="let itemA of item[4][1]; let indice = index"> {{ itemA }}</td>
+
+                        <td class="informacion-table-tbody-td">{{ item[4][0].toFixed(2) }}</td>
+                        <td class="informacion-table-tbody-td">{{ item[7] }}</td>
+
+                        <td class="informacion-table-tbody-td">{{ item[8] }}</td>
+
+                        <td class="{{ TotalDevolucionClases[i] }}" *ngFor="let itemA of item[6][1]; let i = index">{{ itemA }}</td>
+
+
+                        <td class="informacion-table-tbody-td">{{ item[6][0].toFixed(2) }}</td>
+                        <td class="informacion-table-tbody-td material-salida" *ngFor="let itemA of item[9]">{{ itemA }}</td>
+
+                      </tr>
+                      <tr class="informacion-table-tbody-tr-tabla-" >
+                          <td class="informacion-table-tbody-td"></td>
+                          <td class="informacion-table-tbody-td"></td>
+                          <td class="informacion-table-tbody-td"></td>
+                          <td class="informacion-table-tbody-td"></td>
+                          <td class="informacion-table-tbody-td"></td>
+                          <td class="informacion-table-tbody-td"></td>
+                          <td class="informacion-table-tbody-td" [attr.colspan]="mayor"></td>
+                          <td class="informacion-table-tbody-td-total-corrida">{{ this.corridasOrdenProduccionTotal[0] }}</td>
+                          <td class="informacion-table-tbody-td-total-corrida">{{ this.corridasOrdenProduccionTotal[1] }}</td>
+                          <td class="informacion-table-tbody-td-total-corrida">{{ this.corridasOrdenProduccionTotal[2] }}</td>
+                          <td class="{{ TotalDevolucionClases[i] }}" *ngFor="let itemA of this.TotalDevolucion[1]; let i = index">{{ itemA }}</td>
+                          <td class="informacion-table-tbody-td-total-corrida">{{ this.TotalDevolucion[0].toFixed(2) }}</td>
+                      </tr>
+                       
+                        
+                    </table>
+                </div>
+            </div>
+          </div>
+          
+          
+          <div class="app-informacion-general">
+            <div>
+                <div>
+                    <table class="tabla-total-resumen-orden table table-bordered" id="tabla-total-resumen-orden table table-bordered">
+                      <thead>
+                        <tr></tr>
+                        <tr class="informacion-general-table">
+                          <th class="informacion-general-table-th">MATERIAL CONSUMIDO</th>
+                          <th class="informacion-general-table-th">CANTIDAD CONSUMIDA</th>
+                          <th class="informacion-general-table-th">DEVOLUCION</th>
+                          <th class="informacion-general-table-th">CUADRE</th>
+                          <th class="informacion-general-table-th">DESVIACION</th>
+                        </tr> 
+                      </thead>
+          
+                      <tr class="informacion-table-tbody-tr" *ngFor="let item of this.consumoMPriExtrusionSend ">
+                        <td class="informacion-table-tbody-td">{{ item[1] }}</td>
+                        <td class="informacion-table-tbody-td">{{ item[0].toFixed(2) }}</td>
+                        <td class="informacion-table-tbody-td">{{ item[3] }}</td>
+                      </tr>
+                      <tr class="total-tabla-total-resumen-orden">
+                        <td class="informacion-table-tbody-td">TOTAL</td>
+                        <td class="informacion-table-tbody-td">{{ this.consumoMPriExtrusionSendTotal.toFixed(2) }}</td>
+                        <td class="informacion-table-tbody-td">{{ this.consumoMPriExtrusionSendTotalDevolucion }}</td>
+                        <td class="informacion-table-tbody-td">{{ this.ordenProduccionCuadre.toFixed(2) }}</td>
+                        <td class="informacion-table-tbody-td">{{ this.ordenProduccionDesviacion.toFixed(2) }}%</td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+          </div>
+          <div class="app-informacion-general">
+            <div>
+                <div>
+                    <table class="tabla-consecutivo-peso table table-bordered" id="tabla-consecutivo-peso table table-bordered">
+                      <thead>
+                        <tr></tr>
+                        <tr class="informacion-general-table">
+                          <th class="informacion-general-table-th">CONSECUTIVO</th>
+                          <th class="informacion-general-table-th">PESO</th>
+                        </tr> 
+                      </thead>
+          
+                      <tr class="informacion-table-tbody-tr" *ngFor="let item of this.consecutivoPeso ">
+                        <td class="informacion-table-tbody-td">{{ item.noLote }}</td>
+                        <td class="informacion-table-tbody-td">{{ item.pesoNetoRollo }}</td>
+                      </tr>
+                      <tr class="total-tabla-consecutivo-peso">
+                        <td class="informacion-table-tbody-td">TOTAL</td>
+                        <td class="informacion-table-tbody-td">{{ this.corridasOrdenProduccionTotal[0] }}</td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="app-informacion-general">
+            <div>
+                <div>
+                    <table class="tabla-total-resumen-orden table table-bordered" id="tabla-total-resumen-orden table table-bordered">
+                      <thead>
+                        <tr></tr>
+                        <tr class="informacion-general-table">
+                          <th class="informacion-general-table-th">CODIGO</th>
+                          <th class="informacion-general-table-th">MATERIAL CONSUMIDO</th>
+                          <th class="informacion-general-table-th">CANTIDAD CONSUMIDA</th>
+                        </tr> 
+                      </thead>
+          
+                      <tr class="informacion-table-tbody-tr" *ngFor="let item of this.transferido ">
+                        <td class="informacion-table-tbody-td">{{ item.codigoProducto }}</td>
+                        <td class="informacion-table-tbody-td">{{ item.descripcion }}</td>
+                        <td class="informacion-table-tbody-td">{{ item.cantidadConsumida }}</td>
+                      </tr>
+                      <tr class="total-tabla-total-resumen-orden">
+                        <td class="informacion-table-tbody-td" colspan="2">TOTAL</td>
+                        <td class="informacion-table-tbody-td">{{ this.totalTransferenciaValor }}</td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+          </div>
+
+    </div>    
+</div>

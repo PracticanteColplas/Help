@@ -1,0 +1,84 @@
+.absolute{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+
+.relative {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    bottom: auto;
+    z-index: 1047;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    background-color: #fff;
+    background-clip: border-box;
+    outline: 0;
+    transition: transform .3s;
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px;
+    background-clip: padding-box;
+
+    
+    border: 1px solid;
+}
+
+.title-tiempo-paro {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    color: #A7A8AB;
+    background-color: #FFFFFF;
+    border-color: #E9EBF0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #13A8BC;
+    border-color: #13A8BC;
+}
+
+.div-buttons-extrusion-inicio {
+    margin: 20px;
+}
+
+.div-buttons-extrusion-inicio button {
+    margin: 8px;
+    padding: 15px;
+    padding-inline: 40px;
+}
+
+
+
+.needs-bold{
+    font-weight: bold;
+}
+
+.div-container{
+    margin-bottom: 20px;
+}
+
+.iniciarNuevaCorrida:active {
+    background-color: black;
+}
+
+.form-control {
+    border-radius: 0.6rem;
+    display: inline-flex;
+    width: 70%;
+}
+
+.form-select {
+    display: unset;
+    width: 70%;
+    border-radius: 0.6rem;
+    margin-bottom: 4%;
+}

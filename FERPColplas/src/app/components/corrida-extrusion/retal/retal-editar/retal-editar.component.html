@@ -1,0 +1,20 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="editarRetalExtrusion()">    
+        <div>        
+            <div>
+                <h3>Digite Nuevo Cantidad de Retal</h3>
+            </div>
+            <div class="div-container">
+                <div class="retal-editar-div-input">
+                    <input type="number" class="form-control" id="cantidad" formControlName="cantidad" maxlength="" min="0" pattern="^[0-9.]+">
+                </div>
+            </div>
+            <div class="retal-buttons-center">
+                <div class="div-buttons-extrusion-inicio">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !this.ActivarBoton " type="submit">Aceptar</button>                
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarRetalExtrusionEditar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

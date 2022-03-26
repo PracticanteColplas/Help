@@ -1,0 +1,43 @@
+
+
+<div class="app-informacion-general">
+
+  <div class="div-contenedor-InformacionGeneral">
+    <h3 class="title-InformacionGeneral">INFORMACION GENERAL DE LA CORRIDA</h3>
+  </div>
+  
+  <div>
+      <div>
+          <table class="table table-bordered">
+            <thead>
+              <tr class="informacion-general-table">
+                <th class="informacion-general-table-th">Operario de Inicio</th>
+                <th class="informacion-general-table-th">Fecha de Inicio</th>
+                <th class="informacion-general-table-th">Hora de Inicio</th>
+                <td class="informacion-general-table-td"></td>
+                <th class="informacion-general-table-th">Operario Final</th>
+                <th class="informacion-general-table-th">Fecha Final</th>
+                <th class="informacion-general-table-th">Hora Final</th>
+                <td class="informacion-general-table-td"></td>
+                <th class="informacion-general-table-th">Tiempo Ajuste (H)</th>
+                <td class="informacion-general-table-td"></td>
+                <th class="informacion-general-table-th">Duracion Corrida (H)</th>
+              </tr> 
+            </thead>
+              <tr class="informacion-table-tbody-tr" *ngIf="inicioCorrida.length != 0" >
+                <td class="informacion-table-tbody-td">{{ inicioCorrida[0] }}</td>
+                <td class="informacion-table-tbody-td">{{ inicioCorrida[1] }}</td>
+                <td class="informacion-table-tbody-td">{{ inicioCorrida[2] }}</td>
+                <td class="informacion-table-tbody-td"></td>
+                <td class="informacion-table-tbody-td">{{ finalCorrida[0] }}</td>
+                <td class="informacion-table-tbody-td">{{ finalCorrida[1] }}</td>
+                <td class="informacion-table-tbody-td">{{ finalCorrida[2] }}</td>
+                <td class="informacion-table-tbody-td"></td>
+                <td class="informacion-table-tbody-td">{{ inicioCorrida[3] }}</td>
+                <td class="informacion-table-tbody-td"></td>
+                <td class="informacion-table-tbody-td color-amarillo">{{ DuracionCorrida }}</td>
+              </tr>
+          </table>
+      </div>
+  </div>
+</div>

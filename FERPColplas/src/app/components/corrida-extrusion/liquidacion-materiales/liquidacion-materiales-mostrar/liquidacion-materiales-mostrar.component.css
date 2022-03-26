@@ -1,0 +1,20 @@
+.liquidacion-materiales-table {
+    background: #e8e8e8;
+    border: #b6aaaa solid 2px;
+    border-top: 0px;
+}
+
+.liquidacion-materiales-tr-amarillo{
+    background: #ffd600;
+}
+
+.liquidacion-materiales-tr-td-rojo{
+    background: #ff4040;
+    font-weight: bold;
+}
+
+.liquidacion-materiales-tr-td-gris{
+    background: #a8a8a8;
+    font-weight: bold;
+}
+

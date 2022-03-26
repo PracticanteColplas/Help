@@ -1,0 +1,18 @@
+<div class="app-liquidacion-material">
+    <div class="liquidacion-materiales-fondo">
+        <div>
+            <h3 class="liquidacion-material-title">LIQUIDACION MATERIALES</h3>
+        </div>
+    </div>
+    
+    <app-liquidacion-materiales-mostrar 
+        [MPriActualizar]=this._consumoMPriExtrusionService.ConsumoMPriActualizar 
+        [devolucionActualizar]=this._devolucionService.DevolucionActualizar 
+        [DevolucionTotal]=this._devolucionService.DevolucionTotal
+        [MaterialSalidaActualizar]=this._materialService.MaterialSalidaActualizar
+        [RetalExtrusionActualizar]=this._retalService.RetalExtrusionActualizar
+    
+        (cambioEditarMaterialSalida)='materialSalidaEditarMostrar($event)' 
+        (cambioVerMaterialSalida)='materialSalidaVerMostrar($event)'>
+    </app-liquidacion-materiales-mostrar>
+</div>

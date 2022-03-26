@@ -1,0 +1,37 @@
+<div class="app-reproceso">
+    <div class="reproceso-fondo">
+        <div>
+            <div>
+                <h3 class="reproceso-title">REPROCESO</h3>
+            </div>
+        </div>
+        
+        <div class="reproceso-iniciarReproceso" (click)="IniciarNuevoReproceso()" >
+            <div class="reproceso-iniciarReproceso-contenido">
+                <table>
+                    <tr>
+                        <td>
+                            <i >
+                                Nuevo Reproceso
+                                <i class="bi bi-plus"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                            </i>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+        </div>
+    </div>  
+
+
+    
+    <app-reproceso-ingresar *ngIf='iniciarNuevoReproceso' [ReprocesoPermiso]=this._corridaService.AceptarMaterialSalida (cambio)='cerrarExtrusionReprocesoingresar($event)'></app-reproceso-ingresar>
+    
+    <app-reproceso-mostrar [ReprocesoActualizar]=this._reprocesoService.ReprocesoActualizar (cambioEditarReproceso)='reprocesoEditarMostrar($event)' (cambioVerReproceso)='reprocesoVerMostrar($event)'></app-reproceso-mostrar>
+    
+    <app-reproceso-editar *ngIf='iniciarEditarReproceso ' [reprocesoActualizar]=this._reprocesoService.Reproceso (cambio)='reprocesoEditarMostrar_($event)'></app-reproceso-editar>
+    
+    <app-reproceso-ver *ngIf='iniciarVerReproceso' [reprocesoVer]=this._reprocesoService.ReprocesoPermisoVer (cambio)='reprocesoVerMostrar_($event)'></app-reproceso-ver>
+</div>

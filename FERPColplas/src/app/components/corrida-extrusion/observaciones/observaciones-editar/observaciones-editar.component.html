@@ -1,0 +1,20 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="editarNotaExtrusion()">    
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h2>Digite Nueva Nota</h2>
+            </div>
+            <div class="div-container">
+                <div class="observaciones-editar-div-input">
+                    <textarea class="form-control" id="Descripcion" formControlName="Descripcion" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="observaciones-buttons-center">
+                <div class="div-buttons-extrusion-inicio">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !ActivarBoton" type="submit">Aceptar</button>                
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarNotaEditar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

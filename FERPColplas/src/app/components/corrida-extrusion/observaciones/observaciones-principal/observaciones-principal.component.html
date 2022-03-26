@@ -1,0 +1,35 @@
+<div class="app-observaciones">
+    <div class="observaciones-fondo">
+        <div>
+            <h3 class="observaciones-title">OBSERVACIONES</h3>
+        </div>
+    </div>
+    
+    
+    <div class="observaciones-iniciarObservaciones" (click)="IniciarNuevoObservacion()">
+        <div class="observaciones-iniciarObservaciones-contenido">
+            <table>
+                <tr>
+                    <td>
+                        <i class="bi bi-plus">
+                            Nueva Observacion
+                            <i class="bi bi-plus"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                        </i>
+                    </td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    
+    <app-observaciones-ingresar *ngIf='iniciarNuevoObservacion' [observacionPermiso]=this._corridaService.AceptarObservacion (cambio)='cerrarObservacioningresar($event)'></app-observaciones-ingresar>
+    
+    <app-observaciones-mostrar [NotaActualizar]=this._notaService.NotaActualizar (cambioEditarNota)='notaEditarMostrar($event)' (cambioVerNota)='notaEliminarMostrar($event)'></app-observaciones-mostrar>
+    
+    <app-observaciones-editar *ngIf='iniciarEditarObservaciones' [NotaActualizar]=this._notaService.Nota (cambio)='notaEditarMostrar_($event)'></app-observaciones-editar>
+    
+    <app-observaciones-eliminar [NotaEliminar]=this._notaService.NotaEliminar (cambio)='NotaEliminarMostrar_($event)'></app-observaciones-eliminar>
+    
+</div>

@@ -1,0 +1,44 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="editarMaterialSalida()">    
+        <div class="div-CorridaExtrusion">        
+            <div>
+                <h2 class="needs-bold">Edicion Tiempo de Paro</h2>
+            </div>
+            <div class="div-container">
+                <div class="tiempo-paro-editar-div-input">
+                    <div>
+                        <label class="needs-bold" for="FechaInicio">Confirmar Fecha Inicial</label>    
+                    </div>
+                    <div>
+                        <input type="datetime-local" class="form-control" id="FechaInicio" formControlName="FechaInicio" maxlength="" (change)="limitarFecha($event)">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="needs-bold">Observacion</h2>
+                <p>Especifique con detalle la Causa o Descripcion del paro</p>
+            </div>
+            <div class="div-container">
+                <div class="tiempo-paro-editar-div-input">
+                    <textarea class="form-control" id="CausaDescripcion" formControlName="CausaDescripcion" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="div-container">
+                <div class="tiempo-paro-editar-div-input">
+                    <div>
+                        <label class="needs-bold" for="FechaFinal">Confirmar Fecha Final</label>
+                    </div>
+                    <div>
+                        <input type="datetime-local" class="form-control" id="FechaFinal" formControlName="FechaFinal" maxlength="">
+                    </div>
+                </div>
+            </div>
+            <div class="tiempo-paro-buttons-center">
+                <div class="div-buttons-extrusion-inicio">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !this.ActivarBoton" type="submit">Aceptar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarTiempoParoEditar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

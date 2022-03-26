@@ -1,0 +1,30 @@
+.retal-table {
+    background: #f3eaea;
+    border: #b6aaaa solid 2px;
+    border-top: 0px;
+}
+
+.i-retal{
+    margin-inline: 7px;
+}
+
+.ver{
+    color: #404040;
+}
+
+.editar{
+    color: #196fbc;
+}
+
+.retal-table-tr{
+    border-top: white;
+    background: #e8e8e8;
+}
+
+.modal-body{
+    color: black;
+}
+
+.modal-title{
+    color: black;
+}

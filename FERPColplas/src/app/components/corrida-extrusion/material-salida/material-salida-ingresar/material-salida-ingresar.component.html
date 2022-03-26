@@ -1,0 +1,43 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="guardarMaterialSalida()">    
+        
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h3 class="title-corrida-extrusion">Nuevo Rollo</h3>
+            </div>
+            <div>
+                <h3>Peso Neto del Rollo</h3>
+            </div>
+            <p>Digite Peso Neto del Rollo</p>
+            <div class="div-container">
+                <div>
+                    <input type="number" id="pesoNetoRollo" class="form-control" formControlName="pesoNetoRollo" maxlength="" min="0" pattern="^[0-9.]+">
+                </div>
+            </div>
+            <div class="div-container">
+                <div>
+                    <div class="div-container">
+                        <label for="UbicacionTipo">Ubicacion</label>
+                    </div>
+                    <div>
+                        <select #t (change)="capturar(t.value)" formControlName="ubicacionNumeroLetra" class="form-select form-select-sm">
+                            <option [value]="materialSalidaUbicacionNumeroLetra.valor" *ngFor="let materialSalidaUbicacionNumeroLetra of MaterialSalidaUbicacionNumeroLetra">
+                              {{ materialSalidaUbicacionNumeroLetra.nombre }}
+                            </option>
+                        </select>
+                        <select aria-label="Default select example" formControlName="ubicacionNumeroNumero" id="UbicacionNumeroLetra" name="UbicacionNumeroLetra" class="form-select form-select-sm">
+                            <option [value]="materialSalidaUbicacionNumeroNumero" *ngFor="let materialSalidaUbicacionNumeroNumero of MaterialSalidaUbicacionNumeroNumero" >{{ materialSalidaUbicacionNumeroNumero }}</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="div-container">
+                <div class="div-buttons-extrusion-inicio ">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !materialSalidaPermiso" type="submit">Aceptar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarMaterialSalidaIngresar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

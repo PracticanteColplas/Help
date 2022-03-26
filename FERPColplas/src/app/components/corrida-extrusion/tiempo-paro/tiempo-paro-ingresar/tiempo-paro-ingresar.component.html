@@ -1,0 +1,40 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="guardarTiempoParo()">    
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h2 class="title-tiempo-paro">Nuevo Tiempo de Paro</h2>
+            </div>
+            <div class="div-container">
+                <div>
+                    <div>
+                        <label for="FechaInicio">Confirmar Fecha Inicial </label>
+                    </div>
+                    <div>
+                        <input type="datetime-local" class="form-control" id="FechaInicio" formControlName="FechaInicio" maxlength="" (change)="limitarFecha($event)">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Observacion</h2>
+                <p>Especifique con detalle la Causa o Descripcion del paro</p>
+            </div>
+            <div  class="div-container">
+                <textarea class="form-control" id="CausaDescripcion" formControlName="CausaDescripcion" rows="3"></textarea>
+            </div>
+            <div  class="div-container">
+                <div>
+                    <label for="FechaFinal">Confirmar Fecha Final</label>
+                </div>
+                <div>
+                    <input type="datetime-local" id="FechaFinal" class="form-control" formControlName="FechaFinal" maxlength="">
+                </div>
+            </div>
+            <div class="div-container">
+                <div class="div-buttons-extrusion-inicio ">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || !TiempoParoPermiso"  type="submit">Aceptar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarTiempoParoIngresar()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

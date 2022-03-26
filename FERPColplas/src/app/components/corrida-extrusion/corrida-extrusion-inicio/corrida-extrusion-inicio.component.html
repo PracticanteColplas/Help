@@ -1,0 +1,51 @@
+<div class="relative">
+    <form [formGroup]="form" (ngSubmit)="guardarCorridaExtrusion()">    
+        <div class="div-CorridaExtrusion">
+            <div>
+                <h3 class="title-corrida-extrusion">Incio de la Corrida</h3>
+            </div>
+            <div class="div-container">
+                <div>
+                    <label class="needs-bold" for="FechaInicial">Confirmar Fecha Inicial </label>
+                </div>
+                <div>
+                    <input type="datetime-local" id="FechaInicial" class="form-control" formControlName="fechaInicial">
+                </div>
+            </div>
+            <div class="div-container">
+                <div>
+                    <label class="needs-bold" for="OperarioInicial">Operario Inicial </label>
+                    <p>Digite su codigo de operario</p>
+                </div>
+                <div>
+                    <input type="number" id="OperarioInicial" class="form-control" formControlName="operarioIncial" >
+                </div>
+            </div>
+            <div class="div-container">
+                <div>
+                    <label class="needs-bold" for="TiempoAjuste">Tiempo de Ajuste en Horas </label>
+                    <p>Digite el tiempo de ajuste</p>
+                </div>
+                <div>
+                    <input type="number" id="TiempoAjuste" class="form-control" formControlName="tiempoAjuste" maxlength="" min="0" pattern="^[0-9.]+">
+                </div>
+            </div>
+            <div class="div-container">
+                <div>
+                    <label class="needs-bold" for="Maquina">Maquina </label>
+                </div>
+                <div>
+                    <select class="form-select" aria-label="Default select example" formControlName="maquina" id="Maquina">
+                        <option [value]="maquina.value" *ngFor="let maquina of listMaquinasCorridaExtrusion">{{ maquina.nombre }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="div-container">
+                <div class="div-buttons-extrusion-inicio ">
+                    <button class="btn btn-primary btn-sm" [disabled]="this.form.invalid || this.boton" type="submit">Aceptar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarCorridaExtrusionInicio()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

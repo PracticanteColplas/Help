@@ -1,0 +1,22 @@
+.observaciones-table {
+    background: #e8e8e8;
+    border: #b6aaaa solid 2px;
+    border-top: 0px;
+    
+}
+
+.observaciones-th{
+    width: 75%;
+}
+
+.i-observaciones{
+    margin-inline: 7px;
+}
+
+.ver{
+    color: #404040;
+}
+
+.editar{
+    color: #196fbc;
+}

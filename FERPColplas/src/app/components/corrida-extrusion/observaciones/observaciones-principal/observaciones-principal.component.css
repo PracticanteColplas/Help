@@ -1,0 +1,44 @@
+.observaciones-title{
+    margin-top: 20px;
+    border: #bcb0b0 solid 2px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.app-observaciones{
+    width: 80%;
+    margin-left: 20px;
+    float: left;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 60px;
+} 
+
+
+.observaciones-fondo{
+    background: #d2d2d2;
+    text-align: center; 
+}
+
+.observaciones-iniciarObservaciones{
+    float: right;
+    margin-top: -30px;
+}
+
+.observaciones-iniciarObservaciones-contenido{
+    background: #13a8bc;
+    padding-block: 3px;
+    padding-inline-start: 20px;
+    border-end-start-radius: 20px;
+    border-start-start-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    padding-right: 5px;
+    color: #c5eaee;
+}
+
+svg {
+    width: 20px;    
+    height: 20px;
+    color: white;
+}

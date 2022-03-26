@@ -1,0 +1,34 @@
+<div class="app-retal">
+    <div class="retal-fondo">
+        <div>
+            <h3 class="retal-title">RETAL</h3>
+        </div>
+    </div>
+    
+    
+    <div class="retal-iniciarReproceso" (click)="IniciarNuevoRetalExtrusion()">
+        <div class="retal-iniciarReproceso-contenido">
+            <table>
+                <tr>
+                    <td>
+                        <i >
+                            Nuevo Retal
+                            <i class="bi bi-plus"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                        </i>
+                    </td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    
+    <app-retal-ingresar *ngIf='iniciarNuevoRetalExtrusion' [RetalExtrusionPermiso]=this._corridaService.AceptarRetalExtrusion (cambio)='cerrarExtrusionRetalingresar($event)' [AceptarRetal]=this._corridaService.AceptarRetal></app-retal-ingresar>
+    
+    <app-retal-mostrar [retalExtrusionActualizar]=this._retalService.RetalExtrusionActualizar (cambioEditarRetalCorridaExtrusion)='retalCorridaExtrusionMostrar($event)' (cambioEliminarRetalExtrusion)='retalExtrusionEliminarMostrar($event)'></app-retal-mostrar>
+
+    <app-retal-editar *ngIf='iniciarEditarRetalExtrusion ' [retalExtrusionActualizar]=this._retalService.RetalCorridaExtrusion (cambio)='materialSalidaEditarMostrar_($event)' ></app-retal-editar>
+    
+    <app-retal-eliminar [retalExtrusionEliminar]=this._retalService.RetalExtrusionEliminar (cambio)='materialSalidaEliminarMostrar_($event)' ></app-retal-eliminar>
+</div>

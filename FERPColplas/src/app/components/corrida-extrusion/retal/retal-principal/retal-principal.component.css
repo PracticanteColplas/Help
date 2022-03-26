@@ -1,0 +1,40 @@
+.retal-title{
+    margin-top: 20px;
+    border: #bcb0b0 solid 2px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.app-retal{
+    width: 100%;
+    margin-bottom: 6%;
+}
+
+.retal-fondo{
+    background: #d2d2d2;
+    text-align: center;
+    
+}
+
+.retal-iniciarReproceso{
+    float: right;
+    margin-top: -30px;
+}
+
+.retal-iniciarReproceso-contenido{
+    background: #13a8bc;
+    padding-block: 3px;
+    padding-inline-start: 20px;
+    border-end-start-radius: 20px;
+    border-start-start-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    padding-right: 5px;
+    color: #c5eaee;
+}
+
+svg {
+    width: 20px;    
+    height: 20px;
+    color: white;
+}
